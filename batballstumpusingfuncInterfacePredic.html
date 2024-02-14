@@ -5,59 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>batballstump</title>
-    <style>
-        body {
-            text-align: center;
-            background-color: rgb(71, 160, 168);
-            position: relative;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        html {
-            font-size: 10px;
-        }
-
-        h1 {
-            font-size: 4rem;
-        }
-
-        .game_container {
-            border: 2px solid black;
-            height: 70vh;
-            width: 80%;
-            margin: 50px auto;
-            background-color: antiquewhite;
-        }
-
-        .container {
-            margin: 100px;
-        }
-
-        #userwinner,
-        #computerwinner {
-            display: none;
-        }
-
-        #result {
-            font-size: 4rem;
-        }
-
-        button {
-            padding: 10px 30px;
-        }
-    </style>
 </head>
 
 <body>
     <div class="game_container">
         <h1>Ball Ball Stump Game</h1>
         <button onclick="cricketMatch(1)">Bat</button>
-
-
         <button onclick="cricketMatch(2)">Ball</button>
-
-
         <button onclick="cricketMatch(3)">Stump</button>
         <br><br>
+        <div class="prediction">
+            <h3>prediction mode</h3>
+            <label class="switch">
+                <input id="predic" value="on" type="checkbox">
+                <span class="round"></span>
+            </label>
+        </div>
         <div class="container">
             <img style="float: left;" src="" alt="user" id="user" height="200px">
             <img style="float: right;" src="" alt="computer" id="computer" height="200px">

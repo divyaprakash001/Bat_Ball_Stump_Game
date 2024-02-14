@@ -1,40 +1,19 @@
-/*
-function beepsound(r) {
-    let sound, beat;
-    if (r == 1) {
-        sound = 'sound/batsound.mp3';
-    } else if (r == 2) {
-        sound = 'sound/gunsount.mp3';
-
-    } else {
-        sound = 'sound/slap.mp3';
-
-    }
-
-    beat = new Audio(sound);
-    // Play the beat
-    beat.play();
-
-    // Pause/stop the beat
-    // beat.pause();
-
-    // Reload the beat (back to the start)
-    // beat.load();
+function winnerSound(music) {
+    audio = new Audio(music);
+    audio.play();
 }
-*/
-
-
 
 function cricketMatch(r) {
     let userChoiceMsg = '';
     let randomNumber;
     let computerChoice;
+    let audio, music;
     let result;
     let predic;
 
-    if (predic == true) {
+    predic = document.querySelector('#predic');
 
-
+    if (predic.checked == false) {
 
         if (r == 1) {
             userChoiceMsg = 'Bat';
@@ -53,7 +32,6 @@ function cricketMatch(r) {
 
             document.querySelector('#user').src = 'images/cricbat.png';
 
-            let audio, music;
             if (computerChoice === 'Ball') {
                 resultMsg = 'user won';
                 document.querySelector('#userwinner').style.display = "block";
@@ -77,8 +55,7 @@ function cricketMatch(r) {
 
 
 
-            audio = new Audio(music);
-            audio.play();
+            winnerSound(music);
             document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
 
 
@@ -106,20 +83,23 @@ function cricketMatch(r) {
                 document.querySelector('#userwinner').style.display = "none";
                 document.querySelector('#computerwinner').style.display = "block";
                 document.querySelector('#result').innerHTML = `${resultMsg}`;
+                music = 'sound/batsound.mp3';
             } else if (computerChoice === 'Stump') {
                 resultMsg = 'user won';
                 document.querySelector('#userwinner').style.display = "block";
                 document.querySelector('#computerwinner').style.display = "none";
                 document.querySelector('#result').innerHTML = `${resultMsg}`;
+                music = 'sound/gunshount.mp3';
             } else {
                 resultMsg = 'match tied';
                 document.querySelector('#computerwinner').style.display = "none";
                 document.querySelector('#userwinner').style.display = "none";
                 document.querySelector('#result').innerHTML = `${resultMsg}`;
+                music = 'sound/Slap.mp3';
             }
 
 
-
+            winnerSound(music)
             document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
 
 
@@ -145,23 +125,28 @@ function cricketMatch(r) {
                 resultMsg = 'user won';
                 document.querySelector('#userwinner').style.display = "block";
                 document.querySelector('#computerwinner').style.display = "none";
+                music = 'sound/batsound.mp3';
             } else if (computerChoice === 'Stump') {
                 resultMsg = 'match tied';
                 document.querySelector('#computerwinner').style.display = "none";
                 document.querySelector('#userwinner').style.display = "none";
+                music = 'sound/Slap.mp3';
             } else {
                 resultMsg = 'computer won';
                 document.querySelector('#userwinner').style.display = "none";
                 document.querySelector('#computerwinner').style.display = "block";
+                music = 'sound/gunshount.mp3';
             }
 
+            winnerSound(music);
             document.querySelector('#user').innerHTML = `${userChoiceMsg}`;
             document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
             document.querySelector('#result').innerHTML = `${resultMsg}`;
 
 
         }
-    }else{
+    } else {
         // no predic mode 
+
     }
 }
