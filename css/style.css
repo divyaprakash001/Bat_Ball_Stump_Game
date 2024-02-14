@@ -17,7 +17,7 @@ h1 {
     height: 70vh;
     width: 80%;
     margin: 50px auto;
-    background-color: antiquewhite;
+    background-color: #FFE7E7;
     position: relative;
 }
 
@@ -43,13 +43,21 @@ button {
 .prediction{
     position: absolute;
     right: 100px;
-    top: 100px;
+    top: 60px;
+}
+.prediction h2{
+    color: white;
+    text-transform: uppercase;
 }
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
+ }
+
+ .reverse{
+    display: none;
  }
  .switch input {
     opacity: 0;
