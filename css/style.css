@@ -20,6 +20,19 @@ h1 {
     background-color: #FFE7E7;
     position: relative;
 }
+.game_container h1{
+    /* background-color: #ccc; */
+}
+
+button{
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: gray;
+    color: white;
+    box-shadow: 1px 3px 1px white;
+}
 
 .container {
     margin: 100px;
@@ -48,6 +61,7 @@ button {
 .prediction h2{
     color: white;
     text-transform: uppercase;
+    background-color: black;
 }
 .switch {
     position: relative;

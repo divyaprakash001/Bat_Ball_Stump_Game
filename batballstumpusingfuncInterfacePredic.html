@@ -18,8 +18,10 @@
         <br><br>
         <div class="prediction">
             <h2>prediction mode</h2>
-            <button value="predict" onclick="change()">On</button>
-            <button onclick="reverse()">Off</button>
+            <label class="switch">
+                <input type="checkbox" id="predic" onclick="change()">
+                <span class="round"></span>
+             </label>
         </div>
         <div class="container">
             <img style="float: left;" src="" id="user" height="200px">
