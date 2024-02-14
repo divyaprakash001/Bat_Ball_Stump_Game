@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>batballstump</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ball Ball Stump Game</h1>
+    <button onclick="cricketMatch(1)">Bat</button>
+
+
+    <button onclick="cricketMatch(2)">Ball</button>
+
+
+    <button onclick="cricketMatch(3)">Stump</button>
+    <br><br>
+    <h1 id="user"></h1>
+    <h1 id="computer"></h1>
+    <h1 id="result"></h1>
+
+
+    <script>
+        function cricketMatch(r) {
+            if (r == 1) {
+                const userChoiceMsg = 'You have choosen bat';
+                let randomNumber = Math.floor(Math.random() * 3);
+                let computerChoice;
+                if (randomNumber > 0 && randomNumber <= 1) {
+                    computerChoice = 'Bat';
+                } else if (randomNumber > 1 && randomNumber <= 2) {
+                    computerChoice = 'Ball';
+                } else {
+                    computerChoice = 'Stump';
+                }
+
+
+                let result;
+                if (computerChoice === 'Ball') {
+                    resultMsg = 'user won'
+                } else if (computerChoice === 'Stump') {
+                    resultMsg = 'computer won'
+                } else {
+                    resultMsg = 'match tied'
+                }
+
+                document.querySelector('#user').innerHTML = `${userChoiceMsg}`;
+                document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
+                document.querySelector('#result').innerHTML = `${resultMsg}`;
+
+
+
+            } else if (r == 2) {
+                const userChoiceMsg = 'You have choosen ball';
+                let randomNumber = Math.floor(Math.random() * 3);
+                let computerChoice;
+                if (randomNumber > 0 && randomNumber <= 1) {
+                    computerChoice = 'Bat';
+                } else if (randomNumber > 1 && randomNumber <= 2) {
+                    computerChoice = 'Ball';
+                } else {
+                    computerChoice = 'Stump';
+                }
+
+
+                let result;
+                if (computerChoice === 'Bat') {
+                    resultMsg = 'computer won'
+                } else if (computerChoice === 'Stump') {
+                    resultMsg = 'user won'
+                } else {
+                    resultMsg = 'match tied'
+                }
+
+                document.querySelector('#user').innerHTML = `${userChoiceMsg}`;
+                document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
+                document.querySelector('#result').innerHTML = `${resultMsg}`;
+
+
+
+            } else {
+                const userChoiceMsg = 'You have choosen stump';
+                let randomNumber = Math.floor(Math.random() * 3);
+                let computerChoice;
+                if (randomNumber > 0 && randomNumber <= 1) {
+                    computerChoice = 'Bat';
+                } else if (randomNumber > 1 && randomNumber <= 2) {
+                    computerChoice = 'Ball';
+                } else {
+                    computerChoice = 'Stump';
+                }
+
+
+                let result;
+                if (computerChoice === 'Bat') {
+                    resultMsg = 'user won'
+                } else if (computerChoice === 'Stump') {
+                    resultMsg = 'match tied'
+                } else {
+                    resultMsg = 'computer won'
+                }
+
+                document.querySelector('#user').innerHTML = `${userChoiceMsg}`;
+                document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
+                document.querySelector('#result').innerHTML = `${resultMsg}`;
+
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
