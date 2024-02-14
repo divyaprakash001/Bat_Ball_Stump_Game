@@ -16,13 +16,13 @@ function cricketMatch(r) {
     let result;
     let predic;
 
+    // getting value of toggle button
     predic = document.querySelector('#predic');
 
-    if (predic === 'predict') {
+    if (predic.checked == false) {
         // reverse()
         if (r == 1) {
             userChoiceMsg = 'Bat';
-            document.querySelector('#user').src = 'images/cricbat.png';
             // userPredic()
             randomNumber = Math.floor(Math.random() * 3);
             if (randomNumber > 0 && randomNumber <= 1) {
@@ -36,6 +36,7 @@ function cricketMatch(r) {
                 document.querySelector('#computer').src = 'images/cricstump.png';
             }
 
+            document.querySelector('#user').src = 'images/cricbat.png';
 
 
             if (computerChoice === 'Ball') {
@@ -155,9 +156,8 @@ function cricketMatch(r) {
 
     } else {
         //  ******************************************predic mode ***********************************************
+        //          need some modification here for winner sound matching
 
-
-        // window.location.reload();
 
         if (r == 1) {
             console.log('predic mode')
@@ -198,6 +198,7 @@ function cricketMatch(r) {
 
 
 
+            //both choice comparison
             if (computerChoice === 'Ball') {
                 resultMsg = 'user won';
                 document.querySelector('#userwinner').style.display = "block";
@@ -226,88 +227,6 @@ function cricketMatch(r) {
 
 
 
-        } else if (r == 2) {
-            userChoiceMsg = 'Ball';
-            randomNumber = Math.floor(Math.random() * 3);
-            computerChoice;
-            if (randomNumber > 0 && randomNumber <= 1) {
-                computerChoice = 'Bat';
-                document.querySelector('#computer').src = 'images/cricbat.png';
-            } else if (randomNumber > 1 && randomNumber <= 2) {
-                computerChoice = 'Ball';
-                document.querySelector('#computer').src = 'images/cricball.png';
-            } else {
-                computerChoice = 'Stump';
-                document.querySelector('#computer').src = 'images/cricstump.png';
-            }
-
-
-            let result;
-            if (computerChoice === 'Bat') {
-                resultMsg = 'computer won';
-                document.querySelector('#userwinner').style.display = "none";
-                document.querySelector('#computerwinner').style.display = "block";
-                document.querySelector('#result').innerHTML = `${resultMsg}`;
-                music = 'sound/batsound.mp3';
-            } else if (computerChoice === 'Stump') {
-                resultMsg = 'user won';
-                document.querySelector('#userwinner').style.display = "block";
-                document.querySelector('#computerwinner').style.display = "none";
-                document.querySelector('#result').innerHTML = `${resultMsg}`;
-                music = 'sound/gunsount.mp3';
-            } else {
-                resultMsg = 'match tied';
-                document.querySelector('#computerwinner').style.display = "none";
-                document.querySelector('#userwinner').style.display = "none";
-                document.querySelector('#result').innerHTML = `${resultMsg}`;
-                music = 'sound/Slap.mp3';
-            }
-
-
-            winnerSound(music)
-            document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
-
-
-
-        } else {
-            userChoiceMsg = 'Stump';
-            randomNumber = Math.floor(Math.random() * 3);
-            computerChoice;
-            if (randomNumber > 0 && randomNumber <= 1) {
-                computerChoice = 'Bat';
-                document.querySelector('#computer').src = 'images/cricbat.png';
-            } else if (randomNumber > 1 && randomNumber <= 2) {
-                computerChoice = 'Ball';
-                document.querySelector('#computer').src = 'images/cricball.png';
-            } else {
-                computerChoice = 'Stump';
-                document.querySelector('#computer').src = 'images/cricstump.png';
-            }
-
-            let result;
-            if (computerChoice === 'Bat') {
-                resultMsg = 'user won';
-                document.querySelector('#userwinner').style.display = "block";
-                document.querySelector('#computerwinner').style.display = "none";
-                music = 'sound/batsound.mp3';
-            } else if (computerChoice === 'Stump') {
-                resultMsg = 'match tied';
-                document.querySelector('#computerwinner').style.display = "none";
-                document.querySelector('#userwinner').style.display = "none";
-                music = 'sound/Slap.mp3';
-            } else {
-                resultMsg = 'computer won';
-                document.querySelector('#userwinner').style.display = "none";
-                document.querySelector('#computerwinner').style.display = "block";
-                music = 'sound/gunsount.mp3';
-            }
-
-            winnerSound(music);
-            document.querySelector('#user').innerHTML = `${userChoiceMsg}`;
-            document.querySelector('#computer').innerHTML = `Computer have choosen ${computerChoice}`;
-            document.querySelector('#result').innerHTML = `${resultMsg}`;
-
-
         }
 
     }
@@ -324,8 +243,9 @@ function change() {
 }
 
 function reverse() {
-    document.querySelector('h1').style.color = 'white';
-    document.querySelector('.game_container').style.backgroundColor = 'green';
+    document.querySelector('h1').style.color = '#0f0f0f';
+    document.querySelector('.game_container').style.backgroundColor = '#FFE7E7';
+    document.querySelector('.prediction h2').style.backgroundColor = 'black';
     document.querySelector('#btn1').innerHTML = 'Bat';
     document.querySelector('#btn2').style.display = 'inline-block';
     document.querySelector('#btn3').style.display = 'inline-block';
