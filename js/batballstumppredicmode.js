@@ -156,7 +156,7 @@ function cricketMatch(r) {
 
     } else {
         //  ******************************************predic mode ***********************************************
-        //          need some modification here for winner sound matching
+        //          need some modification here for winner and sound matching
 
 
         if (r == 1) {
