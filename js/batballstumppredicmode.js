@@ -1,8 +1,24 @@
+'use strict';
 function winnerSound(music) {
-    audio = new Audio(music);
+    let audio = new Audio(music);
     audio.play();
 }
 
+function generateComputerChoice() {
+    let computerChoice;
+    let randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber > 0 && randomNumber <= 1) {
+        computerChoice = 'Bat';
+        document.querySelector('#computer').src = 'images/cricbat.png';
+    } else if (randomNumber > 1 && randomNumber <= 2) {
+        computerChoice = 'Ball';
+        document.querySelector('#computer').src = 'images/cricball.png';
+    } else {
+        computerChoice = 'Stump';
+        document.querySelector('#computer').src = 'images/cricstump.png';
+    }
+    return computerChoice;
+}
 
 
 
@@ -12,8 +28,7 @@ function cricketMatch(r) {
     let randomNumber;
     let UserrandomNumber;
     let computerChoice;
-    let audio, music;
-    let result;
+    let music;
     let predic;
 
     // getting value of toggle button
@@ -84,7 +99,6 @@ function cricketMatch(r) {
             }
 
 
-            let result;
             if (computerChoice === 'Bat') {
                 resultMsg = 'computer won';
                 document.querySelector('#userwinner').style.display = "none";
@@ -127,7 +141,6 @@ function cricketMatch(r) {
                 document.querySelector('#computer').src = 'images/cricstump.png';
             }
 
-            let result;
             if (computerChoice === 'Bat') {
                 resultMsg = 'user won';
                 document.querySelector('#userwinner').style.display = "block";
